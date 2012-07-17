@@ -1,4 +1,4 @@
-jQUery-Plugin-Template
+jQuery-Plugin-Template
 ======================
 
-jQUery Plugin Template with init, reset and destroy methods.
+jQuery Plugin Template with init, reset and destroy methods.
