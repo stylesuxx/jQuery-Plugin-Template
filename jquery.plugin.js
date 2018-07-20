@@ -20,8 +20,8 @@
           $.extend(settings, options);
         }
 
-        console.log('This is the init method. The value of var1 is: ' + settings.var1);
-        privateFunc();
+        $this.append('This is the init method. The value of var1 is: ' + settings.var1)
+        $this.append(privateFunc());
       });
     },
 
@@ -29,7 +29,7 @@
       return this.each(function() {
         var $this = $(this);
 
-        console.log('This is the reset method');
+        $this.append('This is the reset method');
       });
     },
 
@@ -37,7 +37,7 @@
       return this.each(function() {
         var $this = $(this);
 
-        console.log('This is the destroy method');
+        $this.append('This is the destroy method');
       });
     },
   };
@@ -53,7 +53,7 @@
   };
 
   var privateFunc = function(){
-    console.log('This is a private function and only available in this namespace!');
+    return 'This is a private function and only available in this namespace!';
   };
 
 })(jQuery, jQuery);
