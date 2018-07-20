@@ -10,7 +10,7 @@
   var methods = {
     init: function(options){
       var settings = {
-        var1: 'value'
+        var1: "value"
       };
 
       return this.each(function() {
@@ -20,7 +20,7 @@
           $.extend(settings, options);
         }
 
-        $this.append('This is the init method. The value of var1 is: ' + settings.var1)
+        $this.append("This is the init method. The value of var1 is: " + settings.var1)
         $this.append(privateFunc());
       });
     },
@@ -29,7 +29,7 @@
       return this.each(function() {
         var $this = $(this);
 
-        $this.append('This is the reset method');
+        $this.append("This is the reset method");
       });
     },
 
@@ -37,7 +37,7 @@
       return this.each(function() {
         var $this = $(this);
 
-        $this.append('This is the destroy method');
+        $this.append("This is the destroy method");
       });
     },
   };
@@ -45,15 +45,15 @@
   $.fn.myPlugin = function(method){
     if(methods[method]){
       return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-    } else if(typeof method === 'object' || !method){
+    } else if(typeof method === "object" || !method){
       return methods.init.apply(this, arguments);
     } else {
-      $.error('Method ' +  method + ' does not exist on jQuery.myPlugin');
+      $.error("Method " +  method + " does not exist on jQuery.myPlugin");
     }
   };
 
   var privateFunc = function(){
-    return 'This is a private function and only available in this namespace!';
+    return "This is a private function and only available in this namespace!";
   };
 
 })(jQuery, jQuery);
