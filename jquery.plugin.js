@@ -13,7 +13,7 @@
         var1: 'value'
       };
 
-      return this.each(function(){
+      return this.each(function() {
         var $this = $(this);
 
         if(options){
@@ -22,40 +22,38 @@
 
         console.log('This is the init method. The value of var1 is: ' + settings.var1);
         privateFunc();
-      })
+      });
     },
 
     reset: function(){
-      return this.each(function(){
+      return this.each(function() {
         var $this = $(this);
 
         console.log('This is the reset method');
-      })
+      });
     },
 
     destroy: function(){
-      return this.each(function(){
+      return this.each(function() {
         var $this = $(this);
 
         console.log('This is the destroy method');
-      })
-    }
+      });
+    },
   };
 
   $.fn.myPlugin = function(method){
     if(methods[method]){
       return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-    }
-    else if(typeof method === 'object' || !method){
+    } else if(typeof method === 'object' || !method){
       return methods.init.apply(this, arguments);
-    }
-    else{
+    } else {
       $.error('Method ' +  method + ' does not exist on jQuery.myPlugin');
     }
   };
 
   var privateFunc = function(){
-    console.log('This is a private function!');
-  }
+    console.log('This is a private function and only available in this namespace!');
+  };
 
 })(jQuery, jQuery);
