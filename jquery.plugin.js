@@ -10,7 +10,7 @@
   var methods = {
     init: function(options){
       var settings = {
-        'var1': 'value'
+        var1: 'value'
       };
 
       return this.each(function(){
@@ -19,8 +19,8 @@
         if(options){
           $.extend(settings, options);
         }
-        
-        console.log('This is the init method. The value of var1 is: ' + settings['test']);
+
+        console.log('This is the init method. The value of var1 is: ' + settings.var1);
         privateFunc();
       })
     },
