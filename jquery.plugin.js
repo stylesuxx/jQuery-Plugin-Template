@@ -55,5 +55,4 @@
   var privateFunc = function(){
     return "This is a private function and only available in this namespace!";
   };
-
 })(jQuery, jQuery);
